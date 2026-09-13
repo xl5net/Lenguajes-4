@@ -12,15 +12,15 @@ export default function Contacto() {
         <div className="flex flex-col gap-space-md text-left">
           <div>
             <span className="font-label-md text-on-surface-variant uppercase tracking-wider">Nombre:</span>
-            <p className="text-body-lg text-on-surface">[Ignacio Giangrieco]</p>
+            <p className="text-body-lg text-on-surface">Ignacio Giangrieco</p>
           </div>
           <div>
             <span className="font-label-md text-on-surface-variant uppercase tracking-wider">Email:</span>
-            <p className="text-body-lg text-on-surface">[gmailgenerico@gmail.com]</p>
+            <p className="text-body-lg text-on-surface">gmailgenerico@gmail.com</p>
           </div>
           <div>
             <span className="font-label-md text-on-surface-variant uppercase tracking-wider">Teléfono:</span>
-            <p className="text-body-lg text-on-surface">[1111122233]</p>
+            <p className="text-body-lg text-on-surface">1111122233</p>
           </div>
           <div>
             <span className="font-label-md text-on-surface-variant uppercase tracking-wider">GitHub:</span>
