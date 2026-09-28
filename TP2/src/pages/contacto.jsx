@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser'; 
+
 export default function Contacto() {
 
   const { register, handleSubmit, reset , formState: {errors} } = useForm();
   const [mensajeExito, setMensajeExito] = useState(false);
 
   const onSubmit = (data) => {
-    console.log(data)
-
-    setMensajeExito(true)
-
-    reset()
-
-    setTimeout(() => {
-      setMensajeExito(false);
-    }, 2000);
-  } 
-
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      data,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then((result) => {
+        console.log("Email enviado con éxito", result.text);
+        setMensajeExito(true);
+        reset();
+        
+        setTimeout(() => {
+          setMensajeExito(false);
+        }, 2000);
+    })
+    .catch((error) => {
+        console.log("Hubo un error al enviar:", error.text);
+        alert("Hubo un error al enviar el mensaje.");
+    });
+  };
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-margin-mobile">
       <h1 className="font-display-hero text-headline-lg lg:text-display-hero text-on-surface tracking-tight text-center mb-8">
