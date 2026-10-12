@@ -81,7 +81,7 @@ export default function Contacto() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full items-stretch">
         
         <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant w-full flex flex-col justify-between">
-          <h2 className="text-headline-sm text-primary mb-4 text-center">Contactame</h2>
+          <h2 className="text-headline-sm text-primary mb-4 text-center">C</h2>
           
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-space-md text-left">
             
