@@ -1,17 +1,36 @@
-import React from 'react';
+import NoticiasTech from "../components/NoticiasTech";
+import ProyectosGithub from "../components/ProyectosGithub";
+import ClimaSalta from "../components/ClimaSalta";
 
 export default function Inicio() {
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-margin-mobile">
-      <h1 className="font-display-hero text-headline-lg lg:text-display-hero text-on-surface tracking-tight text-center mb-8">
-        TP2 - lenguajes 4
-      </h1>
-      <div className="max-w-2xl text-center">
-        <h2 className="text-headline-sm text-primary mb-4">¿Qué es React?</h2>
-        <p className="text-body-lg text-on-surface-variant">
-          React es una biblioteca de JavaScript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es mantenido por Facebook y la comunidad de software libre.
+    <div className="min-h-[calc(100vh-4rem)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col items-center">
+      <header className="text-center max-w-3xl mb-12">
+        <span className="text-primary font-semibold text-sm tracking-wide uppercase">
+          Lenguajes IV — Cátedra Pacheco — TP 4
+        </span>
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-on-surface tracking-tight mt-2 mb-4">
+          Hub de Tecnologías & Servicios
+        </h1>
+        <p className="text-on-surface-variant text-base sm:text-lg">
+          Integración de múltiples APIs públicas: artículos de la comunidad tecnológica (Dev.to), proyectos open source destacados (GitHub) y estado del clima en Salta (Open-Meteo).
         </p>
-      </div>
+      </header>
+
+      {/* API 1: Dev.to (artículos IT) */}
+      <NoticiasTech />
+
+      {/* divisor visual */}
+      <hr className="w-full my-8 border-outline-variant/30" />
+
+      {/* API 2: gitHub (proyectos open source) */}
+      <ProyectosGithub />
+
+      {/* ddivisor visual */}
+      <hr className="w-full my-8 border-outline-variant/30" />
+
+      {/* API 3: open-meteo (clima en Salta, argentina) */}
+      <ClimaSalta />
     </div>
   );
 }
